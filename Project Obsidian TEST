@@ -1,0 +1,192 @@
+if game.PlaceId == 9498006165 then
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Project Obsidan - [⌛] 🐾 Tapping Simulator!", HidePremium = false,IntroText = "Project Obsidian",SaveConfig = true, ConfigFolder = "OrionTest"})
+
+-- Value
+_G.autoClick = true
+_G.autoRebirth = true
+_G.autostarterEgg = true
+_G.autowoodEgg = true
+_G.autojungleEgg = true
+_G.autoforestEgg = true
+_G.autobeeEgg = true
+
+
+
+
+
+
+
+-- Functions
+
+function autoClick()
+    while _G.autoClick == true do
+            game:GetService("ReplicatedStorage").Events.Tap:FireServer()
+            wait(.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001)
+         end
+    end
+
+    function autoRebirth()
+        while _G.autoRebirth == true do
+                game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(5)
+                wait(.000000000000000000000000000000000000000000001)
+             end
+        end
+
+        function autostarterEgg()
+            while _G.autostarterEgg == true do
+                    game:GetService("ReplicatedStorage").Events.HatchEgg:InvokeServer({},"Starter",1)
+                    wait(.000000000000000000000000000000000001)
+                 end
+            end
+
+            function autowoodEgg()
+                while _G.autowoodEgg == true do
+                        game:GetService("ReplicatedStorage").Events.HatchEgg:InvokeServer({},"Wood Egg",1)
+                        wait(.0000000000000000000000000000001)
+                     end
+                end
+
+                function autojungleEgg()
+                    while _G.autojungleEgg == true do
+                            game:GetService("ReplicatedStorage").Events.HatchEgg:InvokeServer({},"Jungle Egg",1)
+                            wait(.0000000000000000000000000001)
+                         end
+                    end
+
+                    function autoforestEgg()
+                        while _G.autoforestEgg == true do
+                                game:GetService("ReplicatedStorage").Events.HatchEgg:InvokeServer({},"Forest Egg",1)
+                                wait(.0000000000000000000000001)
+                             end
+                        end
+
+                        function autobeeEgg()
+                            while _G.autobeeEgg == true do
+                                    game:GetService("ReplicatedStorage").Events.HatchEgg:InvokeServer({},"Bee Egg",1)
+                                    wait(.000000000000000000000000000000000000001)
+                                 end
+                            end    
+            
+
+
+
+
+
+
+
+
+
+-- Tabs
+local FarmsTab = Window:MakeTab({
+	Name = "Farms",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local EggTab = Window:MakeTab({
+	Name = "Egg",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local MiscTab = Window:MakeTab({
+	Name = "Misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+
+
+
+
+
+
+
+
+
+-- Toggles
+FarmsTab:AddToggle({
+	Name = "AutoClicker",
+	Default = false,
+	Callback = function(Value)
+		_G.autoClick = Value
+            autoClick()
+	end    
+})
+
+FarmsTab:AddToggle({
+	Name = "AutoRebirth",
+	Default = false,
+	Callback = function(Value)
+		_G.autoRebirth = Value
+            autoRebirth()
+	end    
+})
+
+EggTab:AddToggle({
+	Name = "AutoStarterEgg",
+	Default = false,
+	Callback = function(Value)
+		_G.autostarterEgg = Value
+            autostarterEgg()
+	end    
+})
+
+EggTab:AddToggle({
+	Name = "AutoWoodEgg",
+	Default = false,
+	Callback = function(Value)
+		_G.autowoodEgg = Value
+            autowoodEgg()
+	end    
+})
+
+EggTab:AddToggle({
+	Name = "AutojungleEgg",
+	Default = false,
+	Callback = function(Value)
+		_G.autojungleEgg = Value
+            autojungleEgg()
+	end    
+})
+
+EggTab:AddToggle({
+	Name = "AutoforestEgg",
+	Default = false,
+	Callback = function(Value)
+		_G.autoforestEgg = Value
+            autoforestEgg()
+	end    
+})
+
+EggTab:AddToggle({
+	Name = "AutobeeEgg",
+	Default = false,
+	Callback = function(Value)
+		_G.autobeeEgg = Value
+            autobeeEgg()
+	end    
+})
+
+-- Labels 
+EggTab:AddLabel("More Eggs Soon!")
+
+MiscTab:AddLabel("More Things soon!")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+end
+OrionLib.Init()
