@@ -1,0 +1,303 @@
+if game.PlaceId == 3623096087 then
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Project Obsidian - 💪Muscle Legends", HidePremium = false,IntroText = "Project Obsidian", SaveConfig = true, ConfigFolder = "OrionTest"})
+
+-- Values
+_G.autoWeight = true
+_G.autohandStand = true
+_G.autopushUp = true
+_G.autositUp = true
+_G.autospinFortune = true
+_G.autodeadLift = true
+_G.autobenchPress = true
+_G.autoboulder = true
+_G.autopullUp = true
+
+
+
+
+
+
+
+
+
+
+
+-- Functions
+function autoWeight()
+    while _G.autoWeight == true do
+            game:GetService("Players").LocalPlayer.muscleEvent:FireServer("rep")
+            wait(.0001)
+         end
+    end
+
+    function autohandStand()
+        while _G.autohandStand == true do
+                game:GetService("Players").LocalPlayer.muscleEvent:FireServer("rep")
+                wait(.0001)
+             end
+        end
+
+        function autopushUp()
+            while _G.autopushUp == true do
+                    game:GetService("Players").LocalPlayer.muscleEvent:FireServer("rep")
+                    wait(.0001)
+                 end
+            end
+            
+            function autositUp()
+                while _G.autositUp == true do
+                        game:GetService("Players").LocalPlayer.muscleEvent:FireServer("rep")
+                        wait(.0001)
+                     end
+                end
+
+                function autospinFortune()
+                    while _G.autospinFortune == true do
+                            game:GetService("ReplicatedStorage").rEvents.openFortuneWheelRemote:InvokeServer("openFortuneWheel",workspace["Fortune Wheel"])
+                            wait(.0001)
+                         end
+                    end
+
+                    function autodeadLift()
+                        while _G.autodeadLift == true do
+                                game:GetService("Players").LocalPlayer.muscleEvent:FireServer("rep",workspace.machinesFolder.Deadlift.interactSeat)
+                                wait(.0001)
+                             end
+                        end
+
+                        function autobenchPress()
+                            while _G.autobenchPress == true do
+                                    game:GetService("Players").LocalPlayer.muscleEvent:FireServer("rep",workspace.machinesFolder["Bench Press"].interactSeat)
+                                    wait(.0001)
+                                 end
+                            end
+
+                            function autoboulder()
+                                while _G.autoboulder == true do
+                                        game:GetService("Players").LocalPlayer.muscleEvent:FireServer("rep",workspace.machinesFolder["Boulder Throw"].interactSeat)
+                                        wait(.0001)
+                                     end
+                                end
+
+                                function autopullUp()
+                                    while _G.autopullUp == true do
+                                            game:GetService("Players").LocalPlayer.muscleEvent:FireServer("rep",workspace.machinesFolder.Pullups.interactSeat)
+                                            wait(.0001)
+                                         end
+                                    end
+
+
+
+
+
+
+
+
+
+
+-- Tabs
+local FarmsTab = Window:MakeTab({
+	Name = "AutoFarm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+local MoreFarmsTab = Window:MakeTab({
+	Name = "MoreFarms",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local TeleportsTab = Window:MakeTab({
+	Name = "Teleports",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+local MiscTab = Window:MakeTab({
+	Name = "Misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- Toggles
+FarmsTab:AddToggle({
+	Name = "Auto Weight (Have weight out)",
+	Default = false,
+	Callback = function(Value)
+		_G.autoWeight = Value
+        autoWeight()
+	end    
+})
+
+FarmsTab:AddToggle({
+	Name = "Auto Handstand (have handstand out)",
+	Default = false,
+	Callback = function(Value)
+		_G.autohandStand = Value
+        autohandStand()
+	end    
+})
+
+FarmsTab:AddToggle({
+	Name = "Auto pushup (have pushup out)",
+	Default = false,
+	Callback = function(Value)
+		_G.autositUp = Value
+        autositUp()
+	end    
+})
+
+FarmsTab:AddToggle({
+	Name = "Auto situp (have situp out)",
+	Default = false,
+	Callback = function(Value)
+		_G.autositUp = Values
+        autositUp()
+	end    
+})
+
+MiscTab:AddToggle({
+	Name = "Auto Spin Fortune",
+	Default = false,
+	Callback = function(Value)
+		_G.autospinFortune = Value
+        autospinFortune()
+	end    
+})
+
+MoreFarmsTab:AddToggle({
+	Name = "Auto Deadlift (Be on deadlift)",
+	Default = false,
+	Callback = function(Value)
+		_G.autodeadLift = Value
+        autodeadLift()
+	end    
+})
+
+MoreFarmsTab:AddToggle({
+	Name = "Auto Benchpress (Be on benchpress)",
+	Default = false,
+	Callback = function(Value)
+		_G.autobenchPress = Value
+        autobenchPress()
+	end    
+})
+
+MoreFarmsTab:AddToggle({
+	Name = "Auto boulderthrow (Be on boulderthrow)",
+	Default = false,
+	Callback = function(Value)
+		_G.autoboulder = Value
+        autoboulder()
+	end    
+})
+
+MoreFarmsTab:AddToggle({
+	Name = "Auto Pullup (Be on pullups)",
+	Default = false,
+	Callback = function(Value)
+		_G.autopullUp = Value
+        autopullUp()
+	end   
+})
+
+
+-- Buttons
+MiscTab:AddButton({
+	Name = "Change Size to 1",
+	Callback = function()
+game:GetService("ReplicatedStorage").rEvents.changeSpeedSizeRemote:InvokeServer("changeSize",1)
+  	end    
+})
+
+TeleportsTab:AddButton({
+	Name = "Tiny Gym",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-35.8838196, 3.86919379, 1970.00427, 0.994699597, 1.67685883e-08, -0.102823772, -1.8437996e-08, 1, -1.52851722e-08, 0.102823772, 1.71000192e-08, 0.994699597)
+  	end    
+})
+
+TeleportsTab:AddButton({
+	Name = "Spawn",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(6.96376419, 3.71624947, 135.335541, 0.997399569, 5.73589887e-08, -0.072069779, -6.32247321e-08, 1, -7.91085242e-08, 0.072069779, 8.34594047e-08, 0.997399569)
+  	end    
+})
+
+TeleportsTab:AddButton({
+	Name = "Muscle beach",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-17.1051369, 3.71624899, -489.742584, -0.999166131, -9.36296196e-09, 0.0408291034, -8.80651552e-09, 1, 1.38085232e-08, -0.0408291034, 1.34374467e-08, -0.999166131)
+  	end    
+})
+
+TeleportsTab:AddButton({
+	Name = "Muscle King Gym",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-8756.05469, 23.3582916, -5824.72949, -0.994619906, -7.58444187e-08, 0.103591591, -7.97509827e-08, 1, -3.35692789e-08, -0.103591591, -4.16502033e-08, -0.994619906)
+  	end    
+})
+
+TeleportsTab:AddButton({
+	Name = "frost gym",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2792.72241, 3.71624947, -392.302216, 0.153767839, -8.910642e-09, -0.988107026, 1.5381465e-08, 1, -6.62425004e-09, 0.988107026, -1.41799363e-08, 0.153767839)
+  	end    
+})
+
+TeleportsTab:AddButton({
+	Name = "Mythical gym",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2250.77808, 28.6999931, 1073.22668, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+  	end    
+})
+
+TeleportsTab:AddButton({
+	Name = "Inferno gym",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6928.60205, 3.7162621, -1282.15491, 0.176068798, 1.51869362e-08, -0.984377861, 1.88014448e-09, 1, 1.57642415e-08, 0.984377861, -4.62636374e-09, 0.176068798)
+  	end    
+})
+
+TeleportsTab:AddButton({
+	Name = "Legends gym",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4429.34619, 987.869263, -3856.02612, 0.199969664, 2.08257145e-08, -0.979802072, 5.55814701e-08, 1, 3.25987486e-08, 0.979802072, -6.09775981e-08, 0.199969664)
+  	end    
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+end
+OrionLib.Init()
